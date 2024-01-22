@@ -1,15 +1,21 @@
+// Оголошуємо глобальну змінну для збереження обраної дати
+let userSelectedDate;
+
+// Підключаємо необхідні бібліотеки та їх стилі
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast/dist/js/iziToast.min.js";
 import "izitoast/dist/css/iziToast.min.css";
 
+// Опції для flatpickr
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    const userSelectedDate = selectedDates[0];
+    // Зберігаємо обрану дату у глобальну змінну
+    userSelectedDate = selectedDates[0];
     const currentDate = new Date();
     const startBtn = document.querySelector('[data-start]');
     
@@ -28,7 +34,15 @@ const options = {
   },
 };
 
+// Ініціалізуємо flatpickr з опціями
 flatpickr("#datetime-picker", options);
+
+// Перевіряємо, чи кнопка повинна бути активною при завантаженні сторінки
+const currentDate = new Date();
+if (!userSelectedDate || userSelectedDate <= currentDate) {
+  const startBtn = document.querySelector('[data-start]');
+  startBtn.setAttribute('disabled', true);
+}
 
 // Оголошуємо змінні для таймера
 let countdownTimer;
@@ -59,9 +73,6 @@ function updateTimer() {
 
 // Обробник кліку на кнопку «Start»
 document.querySelector('[data-start]').addEventListener('click', () => {
-  // Отримуємо обрану дату користувачем
-  const userSelectedDate = flatpickr("#datetime-picker").selectedDates[0];
-
   // Встановлюємо цільову дату для таймера
   targetDate = userSelectedDate;
 
