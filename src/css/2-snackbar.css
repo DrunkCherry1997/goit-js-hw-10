@@ -1,0 +1,28 @@
+.form {
+
+}
+
+label {
+
+}
+
+input {
+
+}
+
+button {
+   display: flex;
+   width: 360px;
+   padding: 8px 16px;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   border-radius: 8px;
+   border-color:#FFFFFF ;
+   background: #4E75FF;
+   margin-top: 24px;
+}
+
+button:hover {
+    background-color: #6c8cff;
+}
