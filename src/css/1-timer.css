@@ -1,0 +1,95 @@
+body {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+
+#datetime-picker {
+  width: 272px;
+  margin-top: 40px;
+  margin-bottom: 32px;
+  margin-left: 10px;
+  color: #2e2f42;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding-inline: 8px 16px;
+  /* /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+}
+
+[data-start] {
+  color: #fff;
+  width: 75px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #4e75ff;
+  border: none;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-left: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  align-self: center;
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 0.04em;
+}
+
+.label {
+  color: #2e2f42;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+#datetime-picker:hover {
+  border-color: #000;
+}
+
+#datetime-picker:focus,
+#datetime-picker:focus-visible {
+  border-color: #4e75ff;
+  outline: #4e75ff;
+}
+
+#datetime-picker:disabled {
+  border-color: #808080;
+}
+
+[data-start]:hover,
+[data-start]:focus {
+  cursor: pointer;
+  color: #fff;
+  background: #6c8cff;
+}
+
+[data-start]:disabled {
+  cursor: pointer;
+  color: #989898;
+  background: #cfcfcf;
+}
