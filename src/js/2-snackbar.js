@@ -1,20 +1,19 @@
-// Підключаємо бібліотеку iziToast
+
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-// Отримуємо форму за ідентифікатором
+
 const form = document.querySelector('.form');
 
-// Додаємо обробник події submit для форми
+
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  // Отримуємо значення затримки та стану з форми
   const delayInput = form.querySelector('[name="delay"]');
   const stateInputs = form.querySelectorAll('[name="state"]');
   const selectedState = Array.from(stateInputs).find(input => input.checked);
 
-  // Перевіряємо, чи обрано стан
+
   if (!selectedState) {
     iziToast.error({
       title: 'Error',
@@ -23,10 +22,9 @@ form.addEventListener('submit', function (event) {
     return;
   }
 
-  // Отримуємо значення затримки та перетворюємо його на ціле число
   const delay = parseInt(delayInput.value, 10);
 
-  // Перевіряємо, чи введено коректне значення затримки
+
   if (isNaN(delay) || delay <= 0) {
     iziToast.error({
       title: 'Error',
@@ -35,7 +33,6 @@ form.addEventListener('submit', function (event) {
     return;
   }
 
-  // Створюємо проміс з вказаною затримкою та обраним станом
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (selectedState.value === 'fulfilled') {
@@ -46,7 +43,6 @@ form.addEventListener('submit', function (event) {
     }, delay);
   });
 
-  // Обробляємо виконання промісу
   promise.then(
     (result) => {
       iziToast.success({

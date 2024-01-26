@@ -3,25 +3,6 @@ body {
     padding-left: 20px;
 }
 
-.go-back-btn {
-    text-decoration: none;
-    padding: 15px;
-    border: 2px solid white;
-    border-radius: 5px;
-    outline: none;
-    background: linear-gradient(to right,
-            rgb(84, 26, 246, 0.4),
-            rgb(223, 54, 242, 0.5));
-    color: rgb(251, 252, 252);
-    font-weight: 500;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.go-back-btn:hover {
-    border-color: rgb(223, 54, 242);
-    font-weight: 550;
-}
-
 .form {
     margin-top: 40px;
     margin-left: 10px;
