@@ -20,7 +20,7 @@ const options = {
     
     
     if (userSelectedDate > currentDate) {
-      // Робимо кнопку «Start» активною
+     
       startBtn.removeAttribute('disabled');
     } else {
     
